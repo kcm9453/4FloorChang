@@ -17,3 +17,8 @@ plt.scatter(X[:, 0 ], X[:, 1 ], c = y, cmap = 'brg' )
 plt.show()
 
 
+Layer = Layer_Dense(2,5)
+Layer1 = Layer_Dense(5,2)
+Layer2 = Layer_Dense(3,3)
+Layer2.forward(Layer1.forward(Layer.forward(X)))
+
