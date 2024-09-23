@@ -41,6 +41,7 @@ plt.show()
 
 dense1 = Layer_Dense(2, 3)
 
+output = Activation.forward(Dense1.forward(x))
 print(dense1.forward(X))
 
 
