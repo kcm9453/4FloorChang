@@ -1,7 +1,6 @@
 import numpy as np
 import nnfs
 from nnfs.datasets import spiral_data
-
 nnfs.init()
 
 class cross_entropy:
@@ -39,4 +38,3 @@ loss = categorical_cross_entropy(softmax_outputs, targets)
 print("Categorical Cross-Entropy Loss", loss)
 
 X, y = spiral_data(samples=100, classes=3)
-
