@@ -84,9 +84,9 @@ for iteration in range(200000):
     if loss < lowest_loss:
         print("New set pf weights found, iteration:", iteration, 'loss', loss,'acc:',accuracy)
         best_dense1_weights = dense1.weights.copy()
-        best_dense1_weights = dense1.weights.copy()
+        best_dense2_weights = dense2.weights.copy()
         best_dense1_bias = dense1.biases.copy()
-        best_dense1_bias = dense1.biases.copy()
+        best_dense2_bias = dense2.biases.copy()
         lowest_loss = loss
 
     else:
