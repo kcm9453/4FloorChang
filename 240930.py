@@ -53,10 +53,10 @@ class loss_CategoricalCrossentropy(loss):
         negative_log_likelihoods = -np.log(correct_confidences)
         return negative_log_likelihoods
 
-X, y = vertical_data(samples=100, classes=3)
+X, y = vertical_data(samples=100, classes=10)
 dense1 = Layer_Dense(2,3)
 activation1 = Activation_ReLU()
-dense2 = Layer_Dense(3,3)
+dense2 = Layer_Dense(3,10)
 
 activation2 = Activation_Softmax()
 loss_function = loss_CategoricalCrossentropy()
@@ -67,11 +67,11 @@ best_dense2_weights = dense2.weights.copy()
 best_dense1_bias = dense1.biases.copy()
 best_dense2_bias = dense2.biases.copy()
 
-for iteration in range(100000):
+for iteration in range(200000):
     dense1.weights += 0.05 * np.random.randn(2, 3)
-    dense2.weights += 0.05 * np.random.randn(3, 3)
+    dense2.weights += 0.05 * np.random.randn(3, 10)
     dense1.biases += 0.05 * np.random.randn(1, 3)
-    dense2.biases += 0.05 * np.random.randn(1, 3)
+    dense2.biases += 0.05 * np.random.randn(1, 10)
 
     out = activation1.forward(dense1.forward(X))
     out = activation2.forward(dense2.forward(out))
